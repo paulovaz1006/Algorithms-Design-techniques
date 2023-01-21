@@ -1,6 +1,8 @@
 const list = [11, 6, 3, 9, 14, 66, 2];
 const len = list.length;
+
 mergeSort(list, 0, len - 1);
+
 console.log(list);
 
 function mergeSort(list, lb, ub) {
@@ -22,11 +24,11 @@ function merge(list, lb, mid, ub) {
   const right = [];
 
   for(let i = 0; i < n1; i++) {
-    left[i] = list[lb + i];    
+    left[i] = list[lb + i];
   }
 
   for(let i = 0; i < n2; i++) {
-    right[i] = list[mid + 1 + i];    
+    right[i] = list[mid + 1 + i];
   }
 
   let i = 0, j = 0, k = lb;

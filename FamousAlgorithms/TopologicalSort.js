@@ -5,13 +5,13 @@ class Graph {
 
     for(let i = 0; i < this.numberOfVertices; i++) {
       this.adjacencyList[i] = [];
-    }  
+    }
   }
 
   addEdge(u, v) {
     this.adjacencyList[u].push(v);
   }
-  
+
   topologicalSort() {
     const indegree = new Array(this.numberOfVertices).fill(0);
 
@@ -20,6 +20,7 @@ class Graph {
     }
 
     const queue = [];
+
     for (let i = 0; i < this.numberOfVertices; i++) {
       if (indegree[i] === 0) queue.unshift(i)
     }

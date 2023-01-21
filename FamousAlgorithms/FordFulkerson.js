@@ -22,13 +22,11 @@ function getMaxFlow(graph, source, sink) {
 
   let parentMapping = {};
   let augmentingPaths = [];
-
   let maxFlow = 0;
 
   while(findAugmentingPath(residualGraph, parentMapping, source, sink)) {
     let augPath = [];
     let flow = Number.MAX_SAFE_INTEGER;
-
     let v = sink;
 
     while( v !== source) {
@@ -47,6 +45,7 @@ function getMaxFlow(graph, source, sink) {
 
     maxFlow += flow;
     v = sink;
+
     while(v != source) {
       let u = parentMapping[v];
       residualGraph[u][v] -= flow;
